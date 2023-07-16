@@ -1,0 +1,66 @@
+#edit-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: var(--white-color);
+    text-align: center;
+    position: absolute;
+    max-width: 40rem;
+    width: 92%;
+    height: 36rem;
+    border-radius: 0.6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 4px 4px var(--shadow-color);    
+}
+
+#edit-card h1 {
+    font-size: 2.6rem;
+}
+
+#edit-card input,
+#edit-card textarea {
+    font: normal bold 1.2rem 'Poppins', sans-serif;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    border: 0.14rem solid var(--black-color01);
+    border-radius: 0.4rem;
+    outline: none;
+    padding: 0.4rem;
+}
+
+#edit-card input {
+    height: 3rem;
+}
+
+#edit-card textarea {
+    resize: none;
+    margin-top: 1rem;
+    height: 16rem;
+}
+
+#edit-card input::placeholder,
+#edit-card textarea::placeholder {
+    font: normal bold 1.2rem 'Poppins', sans-serif;
+    color: var(--black-color01);
+}
+
+.form-buttons button {
+    font-weight: bold;
+    border: 0.12rem solid var(--black-color01);
+    border-radius: 0.4rem;
+    color: var(--white-color);
+    width: 10rem;
+    height: 3rem;
+}
+
+.form-buttons button:nth-child(1) {
+    background: var(--red-color);
+}
+
+.form-buttons button:nth-child(2) {
+    background: var(--blue-color);
+    margin-left: 1rem;
+}

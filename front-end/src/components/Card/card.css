@@ -1,0 +1,44 @@
+.card {
+    text-align: center;
+    width: 25rem;
+    height: 28rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 8px 4px var(--shadow-color);
+}
+
+.card h1 {
+    font-size: 1.8rem;
+}
+
+.card hr {
+    background: var(--blue-color);
+    border: none;
+    height: 0.2rem;
+    border-radius: 0.2rem;
+    width: 84%;
+    margin: 1rem auto;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-footer button {
+    background: var(--blue-color);
+    border: none;
+    padding: 0.3rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+}
+
+.card-footer .icon {
+    color: var(--white-color);
+}
+
+.card-footer span {
+    margin-left: 2rem;
+    font-size: 1.4rem;
+}

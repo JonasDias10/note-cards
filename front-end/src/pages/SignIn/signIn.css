@@ -1,0 +1,94 @@
+#sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+#sign-in header {
+    background: var(--blue-color);
+    max-width: 36rem;
+    width: 100%;
+    border-radius: 0 0 2rem 2rem;
+    height: 32rem;
+    color: var(--white-color);
+    padding: 1rem 0;
+}
+
+#sign-in header h1,
+#sign-in header h2 {
+    line-height: 2.8rem;
+}
+
+#sign-in main {
+    background: var(--white-color);
+    position: absolute;
+    top: 32%;
+    max-width: 32rem;
+    width: 90%;
+    height: 28rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 4px 4px var(--shadow-color);
+}
+
+#sign-in main h1 {
+    font-size: 3rem;
+}
+
+#sign-in main form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 2rem 0;
+    height: 100%;
+}
+
+#sign-in .form-inputs {
+    width: 100%;
+}
+
+#sign-in form input {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.6rem;
+    height: 4rem;
+    border: 0.2rem solid var(--black-color01);
+    border-radius: 0.4rem;
+}
+
+#sign-in form input:last-child {
+    margin-top: 1.4rem;
+}
+
+#sign-in main span {
+    position: absolute;
+    bottom: 6.5rem;
+    color: var(--red-color);
+    font-size: 1.4rem;
+}
+
+#sign-in main button {
+    color: var(--white-color);
+    background: var(--blue-color);
+    border: 0.2rem solid var(--black-color01);
+    max-width: 26rem;
+    width: 90%;
+    height: 4rem;
+    font-size: 1.8rem;
+    border-radius: 0.4rem;
+}
+
+#sign-in footer {
+    margin-bottom: 1rem;
+}
+
+#sign-in footer .link {
+    font-weight: bold;
+    color: var(--blue-color);
+    text-decoration: none;
+}

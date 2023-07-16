@@ -1,0 +1,91 @@
+#sign-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+#sign-up header {
+    background: var(--blue-color);
+    max-width: 36rem;
+    width: 100%;
+    border-radius: 0 0 2rem 2rem;
+    height: 32rem;
+    color: var(--white-color);
+    padding: 1rem 0;
+}
+
+#sign-up header h1,
+#sign-up header h2 {
+    line-height: 2.8rem;
+}
+
+#sign-up main {
+    background: var(--white-color);
+    position: absolute;
+    top: 28%;
+    max-width: 32rem;
+    width: 90%;
+    height: 35rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 4px 4px var(--shadow-color);
+}
+
+#sign-up main h1 {
+    font-size: 3rem;
+}
+
+#sign-up main form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+#sign-up .form-inputs {
+    width: 100%;
+    padding: 0.4rem 0 2rem 0;
+}
+
+#sign-up form input {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.6rem;
+    height: 4rem;
+    border: 0.2rem solid var(--black-color01);
+    border-radius: 0.4rem;
+    margin: 0.8rem auto;
+}
+
+#sign-up main span {
+    position: absolute;
+    bottom: 4.6rem;
+    color: var(--red-color);
+    font-size: 1.4rem;
+}
+
+#sign-up main button {
+    color: var(--white-color);
+    background: var(--blue-color);
+    border: 0.2rem solid var(--black-color01);
+    max-width: 26rem;
+    width: 90%;
+    height: 4rem;
+    font-size: 1.8rem;
+    border-radius: 0.4rem;
+}
+
+#sign-up footer {
+    margin-bottom: 1rem;
+}
+
+#sign-up footer .link {
+    font-weight: bold;
+    color: var(--blue-color);
+    text-decoration: none;
+}

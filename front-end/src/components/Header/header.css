@@ -1,0 +1,44 @@
+#home-header {
+    background: var(--blue-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    height: 7.8rem;
+    box-shadow: 0 4px 8px 2px var(--shadow-color);
+}
+
+#home-header h1 {
+    color: var(--white-color);
+    font-size: 1.6rem;
+}
+
+#home-header button {
+    background: var(--black-color01);
+    cursor: pointer;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: none;
+    border-radius: 0.4rem;   
+}
+
+#home-header button:hover {
+    background: var(--black-color02);
+}
+
+#home-header .icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--white-color);
+}
+
+@media(max-width: 360px) {
+    #home-header h1 {
+        font-size: 1.2rem;
+    }
+
+    #home-header .btn-header {
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+}

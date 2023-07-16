@@ -1,0 +1,49 @@
+#menu {
+    background: var(--white-color);
+    position: absolute;
+    top: 6.5rem;
+    width: 16rem;
+    height: 20rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 4px 4px var(--shadow-color);
+    animation: menu-animation 0.8s;
+}
+
+#menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 1.4rem 2rem;
+}
+
+#menu ul li {
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#menu ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.3rem;
+    width: 0;
+    transition: width 0.6s;
+}
+
+#menu ul li:hover::after {
+    background: var(--black-color01);
+    width: 100%;
+}
+
+@keyframes menu-animation {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 20rem;
+    }
+}
