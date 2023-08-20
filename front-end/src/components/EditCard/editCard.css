@@ -56,6 +56,10 @@
     height: 3rem;
 }
 
+.form-buttons button:hover {
+    opacity: 0.8;
+}
+
 .form-buttons button:nth-child(1) {
     background: var(--red-color);
 }

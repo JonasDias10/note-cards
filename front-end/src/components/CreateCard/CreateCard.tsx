@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { FormEvent, useRef } from "react"
 import { useCreateCard } from "../../contexts/createCardContext"
 import { useUser } from "../../contexts/userContext"
 import { CardSaveType } from "../../types/cardTypes"
@@ -10,7 +10,9 @@ export function CreateCard() {
     const titleInput = useRef<HTMLInputElement>(null)
     const descriptionTextarea = useRef<HTMLTextAreaElement>(null)
 
-    async function handleCreate(): Promise<void> {
+    async function handleCreate(event: FormEvent<HTMLFormElement>): Promise<void> {
+        event.preventDefault()
+
         if (titleInput.current && descriptionTextarea.current) {
             const card: CardSaveType = {
                 title: titleInput.current.value,
@@ -31,17 +33,17 @@ export function CreateCard() {
                 Criar Card
             </h1>
 
-            <div className="form-inputs">
+            <form id="form-create-card" onSubmit={(event) => handleCreate(event)}>
                 <input type="text" name="title" id="title" placeholder="Título" ref={titleInput} required/>
-                <textarea name="description" id="description" placeholder="Descrição" ref={descriptionTextarea}>
+                <textarea name="description" id="description" placeholder="Descrição" ref={descriptionTextarea} required>
                 </textarea>
-            </div>
+            </form>
 
             <div className="form-buttons">
                 <button type="button" onClick={() => setShowCreateCard(false)}>
                     Cancelar
                 </button>
-                <button type="button" onClick={handleCreate}>
+                <button type="submit" form="form-create-card">
                     Criar
                 </button>
             </div>

@@ -34,6 +34,10 @@
     border-radius: 0.4rem;
 }
 
+.card-footer button:hover {
+    opacity: 0.8;
+}
+
 .card-footer .icon {
     color: var(--white-color);
 }

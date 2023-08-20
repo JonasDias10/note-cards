@@ -17,7 +17,7 @@ function CreateCardProvider({children}: ProviderPropsType) {
             })
         })
         .catch(error => error.response.data)
-        return {success: false, message}
+        return {success: false, message: message}
     }
 
     const CreateCardContextValue: CreateCardPropsType = {
