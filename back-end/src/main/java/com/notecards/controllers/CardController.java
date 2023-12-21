@@ -2,9 +2,8 @@ package com.notecards.controllers;
 
 import com.notecards.card.model.Card;
 import com.notecards.card.service.ICardService;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import java.util.UUID;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,12 +28,12 @@ public class CardController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteCard(@PathVariable @NotNull @Positive UUID id) {
+    public ResponseEntity<Object> deleteCard(@PathVariable @NotNull UUID id) {
         return cardService.deleteCard(id);
     }
 
     @GetMapping("/userCards/{id}")
-    public ResponseEntity<Object> getUserCards(@PathVariable @NotNull @Positive UUID id) {
+    public ResponseEntity<Object> getUserCards(@PathVariable @NotNull UUID id) {
         return cardService.getAllCardsByUserId(id);
     }
 

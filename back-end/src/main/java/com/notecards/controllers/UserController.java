@@ -2,9 +2,8 @@ package com.notecards.controllers;
 
 import com.notecards.user.model.User;
 import com.notecards.user.service.IUserService;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import java.util.UUID;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,13 +28,13 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteUser(@PathVariable @NotNull @Positive UUID id) {
+    public ResponseEntity<Object> deleteUser(@PathVariable @NotNull UUID id) {
         return userService.deleteUser(id);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Object> AuthenticationLogin(@RequestBody User user) {
-        return userService.AuthenticationLogin(user);
+    public ResponseEntity<Object> authenticationLogin(@RequestBody User user) {
+        return userService.authenticationLogin(user);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.notecards.configs;
+package com.notecards.core.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

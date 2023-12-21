@@ -1,9 +1,8 @@
 package com.notecards.user.service;
 
+import com.notecards.core.PasswordEncryption;
 import com.notecards.user.model.User;
 import com.notecards.user.repository.IUserRepository;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,9 +13,11 @@ import java.util.UUID;
 public class UserService implements IUserService {
 
     private final IUserRepository userRepository;
+    private final PasswordEncryption passwordEncryption;
 
-    public UserService(IUserRepository userRepository) {
+    public UserService(IUserRepository userRepository, PasswordEncryption passwordEncryption) {
         this.userRepository = userRepository;
+        this.passwordEncryption = passwordEncryption;
     }
 
     @Override
@@ -25,12 +26,15 @@ public class UserService implements IUserService {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body("The email already exists.");
         }
+
+        user.setPassword(passwordEncryption.encrypt(user.getPassword()));
+
         return ResponseEntity.status(HttpStatus.CREATED)
             .body(userRepository.save(user));
     }
 
     @Override
-    public ResponseEntity<Object> deleteUser(@NotNull @Positive UUID id) {
+    public ResponseEntity<Object> deleteUser(UUID id) {
         if (!userRepository.existsById(id)) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("The user doesn't exist.");
@@ -51,14 +55,15 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public ResponseEntity<Object> AuthenticationLogin(User user) {
+    public ResponseEntity<Object> authenticationLogin(User user) {
         Optional<User> userFound = userRepository.findByEmail(user.getEmail());
  
-        if (!userFound.isPresent()) {
+        if (userFound.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("The email is incorrect.");
         }
-        if (!(userFound.get().getPassword().equals(user.getPassword()))) {
+
+        if (!(passwordEncryption.equals(userFound.get().getPassword(), user.getPassword()))) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body("The password is incorrect.");
         }
