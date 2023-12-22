@@ -24,9 +24,9 @@ public class PasswordEncryption {
         return hexString.toString();
     }
 
-    public boolean equals(String savePassword, String password) {
+    public boolean equals(String savedPassword, String password) {
         String passwordEncrypt = encrypt(password);
-        return passwordEncrypt.equals(savePassword);
+        return passwordEncrypt.equals(savedPassword);
     }
 
 }
